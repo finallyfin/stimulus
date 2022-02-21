@@ -4,8 +4,6 @@ plugins {
     id 'java'
 }
 
-// ok
-
 group 'org.example'
 version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8

@@ -8,9 +8,6 @@ group 'org.example'
 version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
-test {
-    useJUnitPlatform()
-}
 
 /* repositories : 각종 의존성(라이브러리)들을 어떤 원격 저장소에서 받을 지를 결정!! */
 repositories {
@@ -20,8 +17,7 @@ repositories {
 /* dependencies : 프로젝트 개발에 필요한 의존성들을 선언하는 곳 */
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'junit:junit:4.13.1'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
-tasks.named('test') {
-    useJUnitPlatform()
-}
+

@@ -16,8 +16,8 @@ test {
 repositories {
     mavenCentral()
 }
-/* dependencies : 프로젝트 개발에 필요한 의존성들을 선언하는 곳 */
 
+/* dependencies : 프로젝트 개발에 필요한 의존성들을 선언하는 곳 */
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

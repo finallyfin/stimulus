@@ -38,6 +38,22 @@ public class Posts {
     * 4 Column : 테이블의 칼럼을 나타내며 굳이 선언하지 않더라도 해당 클래스의 필드는 모두 컬럼이 됩니다.
     *       사용하는 이유는, 기본값 외에 추가로 변경이 필요한 옵션이 있으면 사용합니다.
     *       문자열의 경우 varchar(255)가 기본값인데, 사이즈를 500으로 늘리고 싶거나 타입을 TEXT로 변경
-    *       하고 싶은 경우에 사용합니다. */
+    *       하고 싶은 경우에 사용합니다.
+    *  API를 만들기 위해 총 3개의 클래스가 필요하다.
+    * 1. request 데이터를 받을 Dto
+    * 2. API요청을 받을 Controller
+    * 3. 트랜잭션, 도메인 기능 간의 순서를 보장하는 Service
+    *
+    * Web Layer : 흔히 사용하는 컨트롤러 등의 뷰 템플릿 영역
+    *   (controllers, exception handlers, filters, view templates, etc)
+    * Service Layer : @Service에 사용되는 서비스 영역. 일반적으로 Controller와 Dao 중간 영역에서 사용됨
+    *                 @Transactional이 사용되어야 하는 영역
+    * Repository Layer : database와 같이 데이터 저장소에 접근하는 영역
+    * Dtos : 계층 간에 데이터 교환을 위한 객체들의 영역. 예를들어 뷰 템플릿 엔진에서 사용될 객체나 repository layer
+    *       에서 결과로 넘겨준 객체 등이 이들을 이야기 한다.
+    * Domain Model : 도메인이라 불리는 개발 대상을 모든 사람이 동일한 관점에서 이해할 수 있고 공유할 수 있도록
+    *               단순화 시킨 것을 도메인 모델이라 한다.
+    *               예로 택시 앱이라고 하면 배차, 탑승, 요금 등이 모두 도메인이 될 수 있다.
+    *               @Entity가 사용된 영역 역시 도메인 모델.   */
 
 }

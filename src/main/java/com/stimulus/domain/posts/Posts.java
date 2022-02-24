@@ -1,5 +1,6 @@
 package com.stimulus.domain.posts;
 
+import com.stimulus.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Getter //(lombok의 어노테이션)
 @NoArgsConstructor //(lombok의 어노테이션) 기본 생성자 자동 추가
 @Entity // 1 Entity (JPA의 어노테이션)
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id //2 Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //3 GeneratedValue
@@ -55,5 +56,12 @@ public class Posts {
     *               단순화 시킨 것을 도메인 모델이라 한다.
     *               예로 택시 앱이라고 하면 배차, 탑승, 요금 등이 모두 도메인이 될 수 있다.
     *               @Entity가 사용된 영역 역시 도메인 모델.   */
+
+    public void update(String title, String content){
+        this.title = title;
+        this.content = content;
+    }
+
+
 
 }

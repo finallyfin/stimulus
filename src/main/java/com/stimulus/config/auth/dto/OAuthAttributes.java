@@ -1,6 +1,7 @@
 package com.stimulus.config.auth.dto;
 
 import com.stimulus.domain.user.Role;
+import com.stimulus.domain.user.User;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -23,6 +24,7 @@ public class OAuthAttributes {
         this.picture = picture;
     }
 
+    // 1 of()
     public static OAuthAttributes of(String registrationId, String userNameAttributeName, Map<String, Object> attributes) {
         if("naver".equals(registrationId)) {
             return ofNaver("id", attributes);
@@ -53,6 +55,7 @@ public class OAuthAttributes {
                 .build();
     }
 
+    // 2  toEntity()
     public User toEntity() {
         return User.builder()
                 .name(name)
@@ -61,4 +64,10 @@ public class OAuthAttributes {
                 .role(Role.GUEST)
                 .build();
     }
+    /* 1. of() : OAuth2User에서 반환하는 사용자 정보는 Map이기 때문에 값 하나하나를 변환해야만 합니다.
+     * 2. toEntity() : User 엔티티를 생성합니다.
+     *       OAuthAttributes에서 엔티티를 생성하는 시점은 처음 가입할 때 입니다.
+     *       가입할 떄의 기본 권한을 GUEST로 주기 위해서 role 빌더값에는 Role.GUEST를 사용합니다.
+     *       OAuthAttributes 클래스 생성이 끝났으면 같은 패키지에 SessionUser 클래스를 생성합니다.*/
+
 }

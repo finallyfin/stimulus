@@ -1,6 +1,7 @@
 package com.stimulus.config.auth;
 
 import com.stimulus.config.auth.dto.OAuthAttributes;
+import com.stimulus.config.auth.dto.SessionUser;
 import com.stimulus.domain.user.User;
 import com.stimulus.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;

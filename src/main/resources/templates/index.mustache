@@ -24,6 +24,8 @@
                 {{^userName}} <!--3. ^userName-->
                     <!--4. href="/oauth2/authorization/google"-->
                     <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+                    <!--5. href="/oauth2/authorization/naver"-->
+                    <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
                 {{/userName}}
             </div>
         </div>
@@ -41,7 +43,10 @@
    4. href="/oauth2/authorization/google"
         스프링 시큐리티에서 기본적으로 제공하는 로그인 URL입니다.
         로그아웃 URL과 마찬가지로 개발자가 별도의 컨트롤러를 생성할 필요가 없습니다.
-
+    5. href="/oauth2/authorization/naver"
+        네이버 로그인 URL은 application-oauth.properties에 등록한 redirect-uri값에 맞춰 자동으로 등록됩니다.
+        /oauth2/authorization/까지는 고정이고 마지막 Path만 각 소셜 로그인 코드를 사용하면 됩니다.
+        여기서는 naver가 마지막 path입니다.
 
 
     -->

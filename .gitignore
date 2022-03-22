@@ -25,4 +25,7 @@ hs_err_pid*
 .gradle
 .idea
 
+build
+out
+
 application-oauth.properties

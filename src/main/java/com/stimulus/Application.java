@@ -2,7 +2,6 @@ package com.stimulus;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 //@EnableJpaAuditing //JPA Auditing 활성화
 // HelloControllerTest돌리고 있는데 JPA metamodel must not be empty! 이런 에러가 나서,

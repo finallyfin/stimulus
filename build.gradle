@@ -38,6 +38,8 @@ test {
 }
 
 dependencies {
+    implementation("mysql:mysql-connector-java:8.0.21")
+
     // 5.8.2 -> 5.7.0 다운그레이드
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'

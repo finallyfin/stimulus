@@ -27,7 +27,7 @@ public class IndexController {
             model.addAttribute("userName", user.getName());
         }
         /* //index.mustache에서 userName을 사용할 수 있게 model에 저장하는 코드 추가
-        SessionUser user = (SessionUser) httpSession.getAttribute("user"); // 1
+        SessionUser user = (    SessionUser) httpSession.getAttribute("user"); // 1
         1. (SessionUser) httpSession.getAttribute("user") : 앞서 작성된 CustromOAuth2UserService에서
         *       로그인 성공 시 세션에 SessionUser를 저장하도록 구성했습니다.
         *       즉, 로그인 성공 시 httpSession.getAttribute("user")에서 값을 가져올 수 있습니다.
